@@ -1,0 +1,26 @@
+########################################################################
+##################LISTA DE EXERCICIOS 3#################################
+#####BÁRBARA REIS DO NASCIMENTO#########################################
+########################################################################
+
+###QUESTÃO 1####
+setwd("C://2020//minicurso")
+testesp<-read.table("dados_Fat_Reg.txt,h=T)
+attach(testesp)
+head(testesp)
+trat<-factor(trat)
+
+#ANOVA#
+anovaumid<-aov(umidade~trat)
+anovaumid
+
+###QUESTÃO 02####
+shapiro.test(anovaumid$res)
+bartlett.test(anovaumid$res,trat)
+
+
+###QUESTÃO 03####
+require(ExpDes.pt)
+
+#fat2.dbc(fator1, fator2, bloco, resp, quali = c(TRUE, TRUE), mcomp = "tukey", fac.names = c("F1", "F2"), sigT = 0.05, sigF = 0.05)
+fat2.dbc(iris$F1,iris$F2,iris$Bloc,iris$V1,fac.names=c("F1","F2"))

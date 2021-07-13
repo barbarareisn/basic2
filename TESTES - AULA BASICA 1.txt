@@ -1,0 +1,338 @@
+###################################################################
+########################EXERCICIOS ################################
+###################CURSO INTRODUÇÃO AO SOFTWARE R 2020#############
+#########BÁRBARA REIS DO NASCIMENTO################################
+###################################################################
+
+############### LISTA DE EXERCICIOS 01####################
+
+###QUESTÃO 01###
+# O R é um sofware baseado em linguagem de programação estatística e gráfica, voltado principalmente para análise de dados.
+
+###QUESTÃO 02###
+#O R é um software livre, dessa forma, seus usuários podem fazer melhoramentos nele. É executável em diferentes plataformas,
+#o que o torna acessível. O software vem com uma biblioteca de comandos básicos, o que facilita seu uso. 
+
+###QUESTÃO 03###
+##Mesmo não possuindo uma interface atraente aos usuários iniciantes, o R, diferente de outros sotwares semelhantes, é gratuito e permite alterações 
+#pois é um software livre. Além disso, ele tem uma biblioteca base disponivel, que facilita o uso para aqueles que estão ingressando na plataforma, 
+#pois já possui comandos prontos que podem ser úteis pra maioria dos usuários iniciantes.
+
+###QUESTÃO 04###
+#Objetos no R são variáveis que recebem uma informação. Ao criar-se um objeto, damos a ele um nome e esse nome será a variável. Objetos também 
+#podem ser descritos como dados organizados em linhas ou colunas. É possível dar a um objeto qualquer tipo de informação como número, textos, vetores, 
+#matrizes e etc e a partir dessa associação, temos a criação de uma variável. A variável dependera do tipo de informação que foi dada ao seu objeto, como
+#exemplo: vetores, matrizes, arrays, listas e dta frames.
+
+###QUESTÃO 06###
+#a)
+3+5
+#b)
+10 +32
+#c)
+25 - 38
+#d)
+ 10 - 45
+#e)
+ 8 * 7
+#f)
+ 9 * 14
+#g)
+ 10 / 7
+#h)
+ 100 / 8
+#i)
+2+4+13*17-200
+#j)
+ 2^100
+#k)
+(5^3+2^2)*log(6)
+#l)
+ #Tangente de 45°
+tan(pi/4)
+#m)
+ #Seno de 90°
+sin(pi/2)
+#n)
+ #Cosseno de 0°
+cos(0)
+
+###QUESTÃO 07#### CRIAÇÃO DE OUTRO SCRIPT
+###QUESTÃO 08### RESOLVIDA NO OUTRO SCRIPT
+
+###QUESTÃO 09####
+a<-651+251
+b<-651-251
+mab<-a*b
+mab
+
+###QUESTÃO 10###
+ls()
+rm(list=ls())
+ls()
+
+###QUESTÃO 11###
+obj1<-c(32.4,29.3,25.1,28.6,45.7,29.3,33.4,28.2,27.4,30.7,29.3,35.3,37.6,42.1)
+obj1
+
+##a)
+somat<-sum(obj1)
+somat
+
+##b) média, mediana, moda 
+mean(obj1)
+
+median(obj1)
+
+#moda
+table(obj1)
+moda<-subset(table(obj1),table(obj1)==max(table(obj1)))
+moda
+
+##c) variancia, desvio padrão e amplitude total
+vari<-var(obj1)
+vari
+
+desv<-sqrt(vari)
+desv
+
+amax<-max(obj1)
+amax
+amin<-min(obj1)
+amin
+ampt<-amax-amin
+ampt
+
+###QUESTÃO 12###
+#a)
+seqa<-seq(84,106,by=1)
+seqa
+#b)
+seqb<-seq(0,15,by=1)
+seqb
+#c)
+seqc<-seq(12,31,by=1)
+seqc
+#d)
+seqd<-seq(20,42,by=1)
+seqd
+#e)
+seqe<-seq(20,1,by=-1)
+#f)
+seqf<-seq(84,106,by=2)
+seqf
+#g)
+seqg<-seq(0,15,by=2)
+seqg
+#h
+seqh<-seq(12,31,by=2)
+seqh
+#j
+seqj<-seq(0,10000,by=200)
+seqj
+
+
+###QUESTÃO 13###
+#a)
+obja<-rnorm(10,mean=40,sd=5)
+obja
+#b)
+objb<-rnorm(15,mean=32,sd=7.8)
+objb
+#c)
+objc<-rnorm(20,mean=26,sd=8.4)
+objc
+#d)
+objd<-rnorm(25,mean=25,sd=6)
+objd
+#e)
+obje<-rnorm(26,mean=12,sd=9)
+obje
+#f)
+objf<-rnorm(32,mean=14,sd=4.3)
+objf
+#g)
+objg<-rnorm(40,mean=17,sd=12)
+objg
+
+###QUESTÃO14###
+clone1<-c(37.5,39,38,37,38)
+clone1
+clone2<-c(44,43.5,45,46.5,45.5)
+clone2
+clone3<-c(42,41.5,39.5,40,41)
+clone3
+clone4<-c(41.5,39,40,40.5,41.5)
+clone4
+clone5<-c(43,41,44.5,45,41.5)
+clone5
+clone6<-c(39,41.5,40.5,39.5,41)
+clone6
+clonet<-c(clone1,clone2,clone3,clone4,clone5,clone6)
+clonet
+
+#a)
+dif1<-37.5-44-42-41.5-43-39
+dif1
+dif2<-39-43.5-41.5-39-41-41.5
+dif2
+dif3<- 38-45-39.5-40-44.5-40.5
+dif3
+dif4<-37-46.5-40-40.5-45-39.5
+dif4
+dif5<-38-45.5-41-41.5-41.5-41
+dif5
+
+#b)ima total de cada clone
+ima1<-sum(clone1)
+ima1
+ima2<-sum(clone2)
+ima2
+ima3<-sum(clone3)
+ima3
+ima4<-sum(clone4)
+ima4
+ima5<-sum(clone5)
+ima5
+ima6<-sum(clone6)
+ima6
+
+#c)média cada clone
+med1<-mean(clone1)
+med1
+med2<-mean(clone2)
+med2
+med3<-mean(clone3)
+med3
+med4<-mean(clone4)
+med4
+med5<-mean(clone5)
+med5
+med6<-mean(clone6)
+med6
+
+#d)diferença entre as médias
+dmed1<-med1-med2-med3-med4-med5-med6
+dmed1
+
+
+#e)mediana de cada clone e diferença entre as medianas
+#medianas
+mediana1<-median(clone1)
+mediana1
+mediana2<-median(clone2)
+mediana2
+mediana3<-median(clone3)
+mediana3
+mediana4<-median(clone4)
+mediana4
+mediana5<-median(clone5)
+mediana5
+mediana6<-median(clone6)
+mediana6
+#diferença entre as medianas
+difm<-mediana1-mediana2-mediana3-mediana4-mediana5-mediana6
+difm
+
+#f)amplitude total, variância e desvio padrão de cada clone
+#amplitude total
+maximo1<-max(clone1)
+maximo1
+minimo1<-min(clone1)
+minimo1
+ampt1<-maximo1-minimo1
+ampt1
+
+maximo2<-max(clone2)
+maximo2
+minimo2<-min(clone2)
+minimo2
+ampt2<-maximo2-minimo2
+ampt2
+
+maximo3<-max(clone3)
+maximo3
+minimo3<-min(clone3)
+minimo3
+ampt3<-maximo3-minimo3
+ampt3
+
+maximo4<-max(clone4)
+maximo4
+minimo4<-min(clone4)
+minimo4
+ampt4<-maximo4-minimo4
+ampt4
+
+maximo5<-max(clone5)
+maximo5
+minimo5-min(clone5)
+minimo5
+ampt5<-maximo5-minimo5
+ampt5
+
+maximo6-max(clone6)
+maximo6
+minimo6-min(clone6)
+minimo6
+ampt6<-maximo6-minimo6
+ampt6
+
+#variancia
+vari1<-var(clone1)
+vari1
+vari2<-var(clone2)
+vari2
+vari3<-var(clone3)
+vari3
+vari4<-var(clone4)
+vari4
+vari5<-var(clone5)
+vari5
+vari6<-var(clone6)
+vari6
+
+
+#desvio padrão
+desv1<-sd(clone1)
+desv1
+desv2<-sd(clone2)
+desv2
+desv3<-sd(clone3)
+desv3
+desv4<-sd(clone4)
+desv4
+desv5<-sd(clone5)
+desv5
+desv6<-sd(clone6)
+desv6
+
+#media, mediana, amplitude total, variancia, desvio padrão, coeficiente de variação e erro padrão de todo conjunto.
+mediat<-mean(clonet)
+mediat
+
+maximotot<-max(clonet)
+maximotot
+minimotot<-min(clonet)
+minimotot
+amplitot<-maximotot-minimotot
+amplitot
+
+medianatot<-median(clonet)
+medianatot
+
+varit<-var(clonet)
+varit
+
+desvt<-sd(clonet)
+desvt
+
+cvt<-desvt/mediat*100
+cvt
+
+num<-length(ctotal)
+num
+raiz<-sqrt(n)
+raiz
+errop<-desvt/raiz
+errop

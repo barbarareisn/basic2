@@ -1,0 +1,169 @@
+
+#########BÁRBARA REIS DO NASCIMENTO################################
+###################################################################
+
+###############TESTES BANCO - EXERCITANDO ####################
+
+###QUESTÃO 01### em anexo banco de dados
+#IMPORTANDO O BANCO 
+read.table("C:\\2020\\minicurso\\b2b.txt",h=T)
+##criando objeto com o banco
+daados<-read.table("C:\\2020\\minicurso\\b2b.txt",h=T)
+banco
+
+###QUESTÃO 02### em anexo banco em txt
+
+###QUESTÃO 03### 
+setwd("C:\\2020\\minicurso")
+getwd()
+
+###QUESTÃO 04###
+#a)média de cada variavel
+medv1<-tapply(dados$variavel1,dados$rep,mean)
+medv1
+medv2<-tapply(dados$variavel2,dados$rep,mean)
+medv2
+
+#b)média de cada variavel em função do fator 1#
+medf1<-tapply(dados$variavel1,dados$fator1,mean)
+medf1
+medf2<-tapply(dados$variavel2,dados$fator1,mean)
+medf2
+
+#c)média de cada variavel em função do fator 2#
+medff1<-tapply(dados$variavel1,dados$fator2,mean)
+medff1
+medff2<-tapply(dados$variavel2,dados$fator2,mean)
+medff2
+
+#d)média fatores simultaneos
+medias<-with(dados,tapply(variavel1,list(fator1,fator2),mean)
+medias
+medias2<-with(dados,tapply(variavel2,list(fator1,fator2),mean)
+medias2
+
+
+#e)
+#mediana#
+medianav1<-tapply(dados$variavel1,dados$rep,median)
+medianav1
+medianav2<-tapply(dados$variavel2,dados$rep,median)
+medianav2
+
+#variancia#
+variaf1<-tapply(dados$variavel1,dados$fator1,var)
+variaf1
+variaff1<-tapply(dados$variavel1,dados$fator2,var)
+variaff1
+variaf2<-tapply(dados$variavel2,dados$fator1,var)
+variaf2
+variaff2<-tapply(dados$variavel2,dados$fator2,var)
+variaff2
+
+#desvio padrão#
+desvf1<-tapply(dados$variavel1,dados$fator1,sd)
+desvf1
+desvff1<-tapply(dados$variavel1,dados$fator2,sd)
+desvff1
+desvf2<-tapply(dados$variavel2,dados$fator1,sd)
+desvf2
+desvff2<-tapply(dados$variavel2,dados$fator2,sd)
+desvff2
+
+####f)utilizando a função with#######
+#a)média de cada variavel
+mediav1<-with(dados,tapply(variavel1,rep),mean)
+mediav1
+mediav2<-with(dados,tapply(variavel2,rep),mean)
+mediav2
+
+#b)média de cada variavel em função do fator 1 -utilizando with#
+medf1w<-with(dados,tapply(variavel1,fator1),mean)
+medf1w
+medf2w<-with(dados,tapply(variavel2,fator1),mean)
+medf2w
+
+#c)média de cada variavel em função do fator 2 - utilizando with#
+medf3w<-with(dados,tapply(variavel1,fator2),mean)
+medf3w
+medf4w<-with(dados,tapply(variavel2,fator2),mean)
+medf4w
+
+#d)utilizando with#
+medff<-with(dados,tapply(variavel1,list(fator1,fator2),mean)
+medff
+
+#e)utilizando with
+medianaw1<-with(dados,tapply(variavel1,),median)
+medianaw1
+medianaw2<-with(dados,tapply(variavel2,rep),median)
+medianaw2
+
+#variancia#
+variaw1<-with(dados,tapply(variavel1,fator1),var)
+variaw1
+variaw2<-with(dados,tapply(variavel1,fator2),var)
+variaw2
+variaw11<-with(dados,tapply(variavel2,fator1),var)
+variaw11
+variaw22<-with(dados,tapply(variavel2,fator2),var)
+variaw22
+
+#desvio padrão#
+desvw1<-with(dados,tapply(variavel1,fator1),sd)
+desvw1
+desvw2<-with(dados,tapply(variavel2,fator1),sd)
+desvw2
+desvw11<-with(dados,tapply(variavel1,fator2),sd)
+desvw11
+desvw22<-with(dados,tapply(variavel2,fator2),sd)
+desvw22
+
+###QUESTÃO 5###
+dados<-read.table("b2b.txt",h=T)
+
+variavel1<-c(31.17,31.5,26.14,37.88,27.48,31.99,29.31,
+21.74,23.21,30.23,24.70,23.53,22.32,26.16,29.98,30.39,
+34.33,38.30,35.22,34.97,39.36,24.94,24.40,11.97,25.20,
+18.94,20.02,15.47,31.69,22.76,24.54,27.56,21.61,41.55,
+26.69,26.05,34.07,33.90,27.93,26.44,23.22,29.85,39.68,
+48.04,50.69,44.11,43.82,41.74,40.03,38.90,38.93,39.53,
+39.40,27.34,37.01,35.72,35.21,36.76,30.56,40.21,23.07,
+26.30,21.50,33.61,33.82,33.62,35.35,34.20,36.72,40.89,
+35.42,25.62,30.43,47.72,30.25,32.09,39.52,34.59,33.42,
+34.71,36.98,30.98,40.39,24.05)
+
+variavel2<-c(71.68,72.46,60.11,87.12,63.20,73.58,67.41,
+54.35,58.02,75.57,61.75,58.81,55.80,65.41,71.96,72.93,82.38,
+91.93,84.52,83.92,94.46,62.35,61.01,29.93,62.99,47.35,50.04,
+38.67,80.80,58.03,62.59,70.29,55.09,105.94,68.07,67.73,88.57,
+88.15,72.63,68.75,60.37,77.60,105.14,127.30,134.32,116.90,
+116.12,110.62,106.09,105.02,105.11,106.74,106.37,73.81,99.91,
+96.44,96.84,101.09,84.04,110.59,63.45,72.31,59.11,94.11,
+94.68,94.14,98.97,95.75,102.81,114.50,100.96,73.02,86.72,
+136.02,86.21,91.47,112.65,100.31,96.91,100.67,107.26,89.84,117.13,
+69.75)
+
+##BOXPLOT VARIAVEL 1
+graf<-boxplot(variavel1)
+title("GRÁFICO VARIÁVEL1")
+graf<-boxplot(variavel1,ylab="eixo y",xlab="eixo x")
+colours()
+graf<-boxplot(variavel1,ylab="eixo y",xlab="eixo x",col="bisque")
+
+###BOXPLOT VARIAVEL 2
+graf<-boxplot(variavel2)
+title("GRÁFICO VARIÁVEL2")
+graf<-boxplot(variavel2,ylab="eixo y",xlab="eixo x")
+colours()
+graf<-boxplot(variavel2,ylab="eixo y",xlab="eixo x",col="violet")
+
+###EXERCICIO 6###
+dados2<-read.table("b2b.txt",h=T)
+ac<-with(tapply(variavel1,variavel2))
+plot(ac)
+
+
+
+
+
